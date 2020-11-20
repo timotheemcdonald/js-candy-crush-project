@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
+    const scoreDisplay = document.getElementById('score')
     const width = 8
     const squares = []
     let score = 0
@@ -118,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if(rowOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)){
                 score += 3
+                scoreDisplay.innerHTML = score
                 rowOfThree.forEach(index => {
                     squares[index].style.backgroundColor = ''
                 })
@@ -133,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if(columnOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)){
                 score += 3
+                scoreDisplay.innerHTML = score
                 columnOfThree.forEach(index => {
                     squares[index].style.backgroundColor = ''
                 })
